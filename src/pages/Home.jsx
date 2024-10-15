@@ -3,6 +3,7 @@ import { DiaryStateContext } from "../App";
 import Header from "../components/Header";
 import Button from "../components/Button";
 import DiaryList from "../components/DiaryList";
+import TodoItem from "../components/TodoItem";
 
 const getMonthlyData = (pivotDate, data) => {
   const beginTime = new Date(
@@ -54,7 +55,7 @@ const Home = () => {
         leftChild={<Button onClick={onDecreaseMonth} text={"<"} />}
         rightChild={<Button onClick={onIncreaseMonth} text={">"} />}
       />
-      <Button element={<TodoItem} />
+      <Button element={<TodoItem />} text={"투두리스트"} />
       <DiaryList data={monthlyData} />
     </div>
   );
