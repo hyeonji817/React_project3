@@ -54,6 +54,7 @@ const Home = () => {
         leftChild={<Button onClick={onDecreaseMonth} text={"<"} />}
         rightChild={<Button onClick={onIncreaseMonth} text={">"} />}
       />
+      <Button element={<TodoItem} />
       <DiaryList data={monthlyData} />
     </div>
   );
