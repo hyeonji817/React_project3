@@ -5,6 +5,7 @@ import Home from "./pages/Home";
 import Diary from "./pages/Diary";
 import New from "./pages/New";
 import Edit from "./pages/Edit";
+import TodoList from "./components/TodoList";
 import Notfound from "./pages/Notfound";
 
 const mockData = [
@@ -103,6 +104,7 @@ function App() {
             <Route path="/new" element={<New />} />
             <Route path="/diary/:id" element={<Diary />} />
             <Route path="/edit/:id" element={<Edit />} />
+            <Route path="/todolist" element={<TodoList />} /> 
             <Route path="*" element={<Notfound />} />
           </Routes>
         </DiaryDispatchContext.Provider>
