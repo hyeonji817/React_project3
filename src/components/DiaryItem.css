@@ -55,4 +55,11 @@
 
 .DiaryItem .button_section {
   min-width: 70px;
+  padding-top: 14px;
+}
+
+.DiaryItem .count {
+  padding-left: 30px;
+  padding-top: -15px;
+  margin-bottom: -10px;
 }
