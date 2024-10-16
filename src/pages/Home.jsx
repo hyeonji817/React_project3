@@ -60,7 +60,7 @@ const Home = () => {
         rightChild={<Button onClick={onIncreaseMonth} text={">"} />}
       />
       <Button 
-        onClick={() => nav(`/components/TodoList`)}
+        onClick={() => nav("../components/TodoList")}
         element={<TodoItem />} 
         text={"투두리스트"} />
       <DiaryList data={monthlyData} />
