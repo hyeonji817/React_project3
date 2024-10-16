@@ -1,8 +1,7 @@
 import { useContext, useState } from "react";
 import { DiaryStateContext } from "../App";
-import { useNavigate
+import { useNavigate} from "react-router-dom";
 
- } from "react-router-dom";
 import Header from "../components/Header";
 import Button from "../components/Button";
 import DiaryList from "../components/DiaryList";
@@ -61,7 +60,7 @@ const Home = () => {
         rightChild={<Button onClick={onIncreaseMonth} text={">"} />}
       />
       <Button 
-        onClick={() => nav()}
+        onClick={() => nav(`/components/TodoList`)}
         element={<TodoItem />} 
         text={"투두리스트"} />
       <DiaryList data={monthlyData} />
