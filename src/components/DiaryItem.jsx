@@ -4,6 +4,7 @@ import Button from "./Button";
 import "./DiaryItem.css";
 import { useNavigate } from "react-router-dom";
 
+// 하트이미지 구현
 const getHeartImage = (heartId) => {
   return heartImage;
 };
