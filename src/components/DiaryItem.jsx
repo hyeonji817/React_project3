@@ -1,9 +1,14 @@
 import { getEmotionImage } from "../util/get-emotion-image";
+import heartImage from "../assets/heart.png"; 
 import Button from "./Button";
 import "./DiaryItem.css";
 import { useNavigate } from "react-router-dom";
 
-const DiaryItem = ({id, emotionId, createdDate, content}) => {
+const getHeartImage = (heartId) => {
+  return heartImage;
+};
+
+const DiaryItem = ({id, emotionId, createdDate, content, heartId}) => {
   const nav = useNavigate();
 
   return (
@@ -29,9 +34,10 @@ const DiaryItem = ({id, emotionId, createdDate, content}) => {
           onClick={() => nav(`/edit/${id}`)}
           text={"수정하기"} />
       </div>
-      <div className="good">
-        <img onClick={() => nav()} 
-          src="../assets/heart.png" />
+      <div 
+        onClick={()=>nav()} 
+        className="good">
+        <img src={getHeartImage(heartId)} />
       </div>
     </div>
   );
