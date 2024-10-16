@@ -37,9 +37,10 @@ const DiaryList = ({data}) => {
           type={"POSITIVE"} 
         />
         <Button 
-        onClick={() => nav("/todolist")}
-        // element={<TodoItem />} <-- 이게 문제였음. 이미 TodoList페이지에 TodoItem 페이지 구동되었는데 굳이 또 연동하려하니 충돌나서 그런듯
-        text={"투두리스트"} />
+          onClick={() => nav("/todolist")}
+          // element={<TodoItem />} <-- 이게 문제였음. 이미 TodoList페이지에 TodoItem 페이지 구동되었는데 굳이 또 연동하려하니 충돌나서 그런듯
+          text={"투두리스트"} 
+        />
       </div>
 
       <div className="list_wrapper">
