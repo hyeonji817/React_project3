@@ -61,7 +61,6 @@ const Home = () => {
       />
       <Button 
         onClick={() => nav("/todolist")}
-        element={<TodoItem />} 
         text={"투두리스트"} />
       <DiaryList data={monthlyData} />
     </div>
