@@ -37,7 +37,7 @@ const DiaryItem = ({id, emotionId, createdDate, content, heartId}) => {
       <div 
         onClick={()=>nav()} 
         className="good">
-        <img src={getHeartImage(heartId)} />
+        <img src={getHeartImage(heartId)} alt="heart" />
       </div>
     </div>
   );
