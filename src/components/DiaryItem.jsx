@@ -29,6 +29,10 @@ const DiaryItem = ({id, emotionId, createdDate, content}) => {
           onClick={() => nav(`/edit/${id}`)}
           text={"수정하기"} />
       </div>
+      <div className="good">
+        <img onClick={() => nav()} 
+          src="../assets/heart.png" />
+      </div>
     </div>
   );
 }; 
