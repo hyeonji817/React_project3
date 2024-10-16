@@ -1,5 +1,8 @@
 import { useContext, useState } from "react";
 import { DiaryStateContext } from "../App";
+import { useNavigate
+
+ } from "react-router-dom";
 import Header from "../components/Header";
 import Button from "../components/Button";
 import DiaryList from "../components/DiaryList";
@@ -46,6 +49,8 @@ const Home = () => {
     );
   };
 
+  const nav = useNavigate();  // 경로이동 메소드 구현 
+
   return (
     <div>
       <Header 
@@ -55,7 +60,10 @@ const Home = () => {
         leftChild={<Button onClick={onDecreaseMonth} text={"<"} />}
         rightChild={<Button onClick={onIncreaseMonth} text={">"} />}
       />
-      <Button element={<TodoItem />} text={"투두리스트"} />
+      <Button 
+        onClick={() => nav()}
+        element={<TodoItem />} 
+        text={"투두리스트"} />
       <DiaryList data={monthlyData} />
     </div>
   );
