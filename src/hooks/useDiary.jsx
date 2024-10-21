@@ -4,7 +4,9 @@ import { useNavigate } from "react-router-dom";
 
 const useDiary = (id) => {
   const data = useContext(DiaryStateContext);
+
   const [curDiaryItem, setCurDiaryItem] = useState();
+
   const nav = useNavigate();
 
   useEffect(() => {
@@ -18,6 +20,7 @@ const useDiary = (id) => {
     }
     setCurDiaryItem(currentDiaryItem);
   }, [id, data]);
+  
   return curDiaryItem;
 }
 
