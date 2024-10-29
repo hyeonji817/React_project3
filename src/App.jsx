@@ -1,31 +1,30 @@
 import "./App.css";
 import { useReducer, useRef, createContext } from "react";
-import { Routes, Route, Link, useNavigate } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 import Home from "./pages/Home";
 import Diary from "./pages/Diary";
 import New from "./pages/New";
 import Edit from "./pages/Edit";
 import TodoList from "./components/TodoList";
 import Notfound from "./pages/Notfound";
-import { getEmotionImage } from "./util/get-emotion-image";
 
 const mockData = [
   {
     id: 1,
     createdDate: new Date("2024-08-12").getTime(),
-    emotionId: 1, 
-    content: "1번 일기 내용", 
+    emotionId: 1,
+    content: "1번 일기 내용",
   },
   {
-    id: 2, 
+    id: 2,
     createdDate: new Date("2024-08-11").getTime(),
-    emotionId: 2, 
-    content: "2번 일기 내용", 
+    emotionId: 2,
+    content: "2번 일기 내용",
   },
   {
-    id: 3, 
+    id: 3,
     createdDate: new Date("2024-08-17").getTime(),
-    emotionId: 3, 
+    emotionId: 3,
     content: "3번 일기 내용",
   },
 ];
@@ -49,15 +48,13 @@ function reducer(state, action) {
   }
 }
 
-export const DiaryStateContext = createContext(); 
+export const DiaryStateContext = createContext();
+
 export const DiaryDispatchContext = createContext();
 
-// 1. "/" : 모든 일기를 조회하는 Home 페이지 
-// 2. "/new" : 새로운 일기를 작성하는 New 페이지 
-// 3. "/diary" : 일기를 상세히 조회하는 Diary 페이지 
 function App() {
-  const [data, dispatch] = useReducer(reducer, mockData); 
-  const idRef = useRef(3); 
+  const [data, dispatch] = useReducer(reducer, mockData);
+  const idRef = useRef(3);
 
   // 새로운 일기 추가 
   const onCreate = (createdDate, emotionId, content) => {
@@ -65,8 +62,8 @@ function App() {
       type: "CREATE",
       data: {
         id: idRef.current++,
-        createdDate, 
-        emotionId, 
+        createdDate,
+        emotionId,
         content,
       },
     });
@@ -75,10 +72,10 @@ function App() {
   // 기존 일기 수정 
   const onUpdate = (id, createdDate, emotionId, content) => {
     dispatch({
-      type: "UPDATE",
+      type: "UPDATE", 
       data: {
-        id,
-        createdDate,
+        id, 
+        createdDate, 
         emotionId,
         content,
       },
@@ -92,7 +89,7 @@ function App() {
       id,
     });
   };
-
+  
   return (
     <>
       <DiaryStateContext.Provider value={data}>
@@ -108,7 +105,7 @@ function App() {
             <Route path="/new" element={<New />} />
             <Route path="/diary/:id" element={<Diary />} />
             <Route path="/edit/:id" element={<Edit />} />
-            <Route path="/todolist" element={<TodoList />} />
+            <Route path="/todolist" element={<TodoList />} /> 
             <Route path="*" element={<Notfound />} />
           </Routes>
         </DiaryDispatchContext.Provider>

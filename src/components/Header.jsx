@@ -1,4 +1,4 @@
-import "./Header.css"; 
+import "./Header.css";
 
 const Header = ({ title, leftChild, rightChild }) => {
   return (
@@ -10,4 +10,4 @@ const Header = ({ title, leftChild, rightChild }) => {
   );
 };
 
-export default Header; 
+export default Header;

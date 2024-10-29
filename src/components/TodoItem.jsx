@@ -1,10 +1,9 @@
 import "./TodoItem.css";
 
-const TodoItem = ({ id, isDone, content, date, onUpdate, onDelete }) => {
+const TodoItem = ({id, isDone, content, date, onUpdate, onDelete }) => {
   const onChangeCheckbox = () => {
     onUpdate(id);
   };
-
   const onClickDeleteButton = () => {
     onDelete(id);
   };
@@ -13,8 +12,7 @@ const TodoItem = ({ id, isDone, content, date, onUpdate, onDelete }) => {
     <div className="TodoItem">
       <input 
         onChange={onChangeCheckbox}
-        readOnly
-        checked={isDone}
+        readOnly checked={isDone}
         type="checkbox"
       />
       <div className="content">{content}</div>

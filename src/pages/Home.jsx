@@ -1,13 +1,13 @@
-import { useContext, useState } from "react"; 
+import { useContext, useState } from "react";
 import { DiaryStateContext } from "../App";
-import { useNavigate } from "react-router-dom";
+import { useNavigate} from "react-router-dom";
 import Header from "../components/Header";
 import Button from "../components/Button";
 import DiaryList from "../components/DiaryList";
 
 const getMonthlyData = (pivotDate, data) => {
   const beginTime = new Date(
-    pivotDate.getFullYear(), 
+    pivotDate.getFullYear(),
     pivotDate.getMonth(),
     1,
     0,
@@ -17,10 +17,10 @@ const getMonthlyData = (pivotDate, data) => {
 
   const endTime = new Date(
     pivotDate.getFullYear(),
-    pivotDate.getMonth() + 1, 
+    pivotDate.getMonth() + 1,
     0, 
     23,
-    59, 
+    59,
     59
   ).getTime();
 
@@ -32,8 +32,11 @@ const getMonthlyData = (pivotDate, data) => {
 
 const Home = () => {
   const data = useContext(DiaryStateContext);
+
   const [pivotDate, setPivotDate] = useState(new Date());
-  const monthlyData = getMonthlyData(pivotDate, data); 
+
+  const monthlyData = getMonthlyData(pivotDate, data);
+ 
   console.log(monthlyData);
 
   const onIncreaseMonth = () => {
@@ -48,11 +51,13 @@ const Home = () => {
     );
   };
 
-  const nav = useNavigate();
+  const nav = useNavigate();  // 경로이동 메소드 구현 
   return (
     <div>
       <Header 
-        title={`${pivotDate.getFullYear()}년 ${pivotDate.getMonth() + 1}월`}
+        title={`${pivotDate.getFullYear()}년 ${
+          pivotDate.getMonth() + 1
+        }월`} 
         leftChild={<Button onClick={onDecreaseMonth} text={"<"} />}
         rightChild={<Button onClick={onIncreaseMonth} text={">"} />}
       />

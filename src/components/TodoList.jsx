@@ -1,8 +1,8 @@
-import "./TodoList.css";
-import { useState, useRef } from "react"; 
+import "./TodoList.css"; 
+import { useState, useRef } from "react";
 import Header2 from "../components/Header2";
 import Editor2 from "../components/Editor2";
-import List from "../components/List"; 
+import List from "../components/List";
 
 const mockData = [
   {
@@ -12,13 +12,13 @@ const mockData = [
     date: new Date().getTime(),
   },
   {
-    id: 1, 
+    id: 1,
     isDone: false,
     content: "운동하기",
     date: new Date().getTime(),
   },
   {
-    id: 2, 
+    id: 2,
     isDone: false,
     content: "독서하기",
     date: new Date().getTime(),
@@ -33,7 +33,7 @@ function TodoList() {
   const onCreate = (content) => {
     const newTodo = {
       id: idRef.current++,
-      isDone: false,
+      isDone: false, 
       content: content,
       date: new Date().getTime()
     };

@@ -1,7 +1,7 @@
 import "./Editor.css";
 import EmotionItem from "./EmotionItem";
-import Button from "./Button"; 
-import { useEffect, useState } from "react"; 
+import Button from "./Button";
+import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { emotionList } from "../util/constants";
 import { getStringedDate } from "../util/get-stringed-date";
@@ -13,7 +13,7 @@ const Editor = ({ initData, onSubmit }) => {
     content: "",
   });
 
-  const nav = useNavigate(); 
+  const nav = useNavigate();
 
   useEffect(() => {
     if (initData) {
@@ -25,13 +25,13 @@ const Editor = ({ initData, onSubmit }) => {
   }, [initData]);
 
   const onChangedInput = (e) => {
-    let name = e.target.name; 
+    let name = e.target.name;
     let value = e.target.value; 
     if (name === "createdDate") {
-      value = new Date(value); 
+      value = new Date(value);
     }
     setInput({
-      ...input, 
+      ...input,
       [name]: value,
     });
   };
@@ -47,10 +47,11 @@ const Editor = ({ initData, onSubmit }) => {
         <input 
           name="createdDate"
           onChange={onChangedInput}
-          value={getStringedDate(input.createdDate)}
-          type="date"
+          value={getStringedDate(input.createdDate)} 
+          type="date" 
         />
       </section>
+      
       <section className="emotion_section">
         <h4>오늘의 감정</h4>
         <div className="emotion_list_wrapper">
@@ -64,29 +65,30 @@ const Editor = ({ initData, onSubmit }) => {
                   },
                 })
               }
-              key={item.emotionId}
-              {...item}
+              key={item.emotionId} 
+              {...item} 
               isSelected={item.emotionId === input.emotionId}
             />
           ))}
         </div>
       </section>
+
       <section className="content_section">
         <h4>오늘의 일기</h4>
         <textarea 
           name="content"
           value={input.content}
           onChange={onChangedInput}
-          placeholder="오늘은 어땠나요?"
+          placeholder="오늘은 어땠나요?" 
         />
       </section>
+
       <section className="button_section">
         <Button onClick={() => nav(-1)} text={"취소하기"} />
         <Button 
           onClick={onSubmitButtonClick}
-          text={"작성완료"}
-          type={"POSITIVE"}
-        />
+          text={"작성완료"} 
+          type={"POSITIVE"} />
       </section>
     </div>
   );

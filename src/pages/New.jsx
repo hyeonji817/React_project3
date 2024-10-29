@@ -12,8 +12,8 @@ const New = () => {
 
   const onSubmit = (input) => {
     onCreate(
-      input.createdDate.getTime(),
-      input.emotionId,
+      input.createdDate.getTime(), 
+      input.emotionId, 
       input.content
     );
     nav("/", { replace: true });
@@ -22,7 +22,7 @@ const New = () => {
   return (
     <div>
       <Header 
-        title={"새 일기 쓰기"}
+        title={"새 일기 쓰기"} 
         leftChild={
           <Button onClick={() => nav(-1)} text={"< 뒤로 가기"} />
         }

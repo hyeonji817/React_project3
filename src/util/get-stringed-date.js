@@ -1,8 +1,8 @@
 export const getStringedDate = (targetDate) => {
-  // 날짜 -> YYYY-MM-DD (09 09)
-  let year = targetDate.getFullYear();
+  // 날짜 -> YYYY-MM-DD (09 09) 
+  let year = targetDate.getFullYear(); 
   let month = targetDate.getMonth() + 1; 
-  let date = targetDate.getDate(); 
+  let date = targetDate.getDate();
 
   if (month < 10) {
     month = `0${month}`;

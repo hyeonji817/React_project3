@@ -1,9 +1,9 @@
-import "./List.css"; 
-import TodoItem from "./TodoItem"; 
-import { useState } from "react"; 
+import "./List.css";
+import TodoItem from "./TodoItem";
+import { useState } from "react";
 
 const List = ({ todos, onUpdate, onDelete }) => {
-  const [search, setSearch] = useState(""); 
+  const [search, setSearch] = useState("");
 
   const onChangeSearch = (e) => {
     setSearch(e.target.value);
@@ -19,7 +19,6 @@ const List = ({ todos, onUpdate, onDelete }) => {
   };
 
   const filteredTodos = getFilteredData();
-
   return (
     <div className="List">
       <h4>Todo List ⛳</h4>
@@ -32,10 +31,10 @@ const List = ({ todos, onUpdate, onDelete }) => {
         {filteredTodos.map((todo) => {
           return (
             <TodoItem 
-              key={todo.id}
+              key={todo.id} 
               {...todo}
               onUpdate={onUpdate}
-              onDelete={onDelete}
+              onDelete={onDelete} 
             />
           );
         })}

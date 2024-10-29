@@ -1,12 +1,14 @@
 import { getEmotionImage } from "../util/get-emotion-image";
-import heartImage from "../assets/heart.png";
+import heartImage from "../assets/heart.png"; 
 import Button from "./Button";
-import "./DiaryList.css";
+import "./DiaryItem.css";
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 
-// 하트이미지 구현 
-const getHeartImage = (heartId) => {};
+// 하트이미지 구현
+const getHeartImage = (heartId) => {
+  return heartImage;
+};
 
 const DiaryItem = ({id, emotionId, createdDate, content, heartId}) => {
   const nav = useNavigate();
@@ -21,12 +23,13 @@ const DiaryItem = ({id, emotionId, createdDate, content, heartId}) => {
 
   return (
     <div className="DiaryItem">
-      <div
-        onClick={()=>nav(`/diary/${id}`)}
-        className={`img_section img_section_${emotionId}`}>
+      <div 
+      onClick={()=>nav(`/diary/${id}`)}
+      className={`img_section img_section_${emotionId}`}>
         <img src={getEmotionImage(emotionId)} />
       </div>
-      <div
+      
+      <div 
         onClick={() => nav(`/diary/${id}`)}
         className="info_section"
       >
@@ -35,19 +38,20 @@ const DiaryItem = ({id, emotionId, createdDate, content, heartId}) => {
         </div>
         <div className="content">{content}</div>
       </div>
+      
       <div className="button_section">
         <Button 
           onClick={() => nav(`/edit/${id}`)}
           text={"수정하기"} />
       </div>
-      <div
-        onClick={() => onClickButton(1)}
+      <div 
+        onClick={()=>onClickButton(1)} 
         className="good">
         <img src={getHeartImage(heartId)} alt="heart" />
         <div className="count">{count}</div>
       </div>
     </div>
   );
-};
+}; 
 
 export default DiaryItem;

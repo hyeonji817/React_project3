@@ -3,6 +3,7 @@ import { useState, useRef } from "react";
 
 const Editor2 = ({ onCreate }) => {
   const [content, setContent] = useState("");
+
   const contentRef = useRef();
 
   const onChangeContent = (e) => {
@@ -28,12 +29,12 @@ const Editor2 = ({ onCreate }) => {
     <div className="Editor2">
       <input 
         ref={contentRef}
-        value={content}
+        value={content} 
         onKeyDown={onKeydown}
-        onChange={onChangeContent}
-        placeholder="새로운 Todo..."
+        onChange={onChangeContent} 
+        placeholder="새로운 Todo..." 
       />
-      <buton onClick={onSubmit}>추가</buton>
+      <button onClick={onSubmit}>추가</button>
     </div>
   );
 };

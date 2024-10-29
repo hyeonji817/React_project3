@@ -1,8 +1,7 @@
 .Header {
   display: flex;
   align-items: center;
-  padding: 20px 0px; 
-  padding: 20px 0px; 
+  padding: 20px 0px;
   border-bottom: 1px solid rgb(226, 226, 226);
 }
 
@@ -11,18 +10,18 @@
 }
 
 .Header .header_center {
-  width: 50%; 
-  font-size: 25px; 
-  font-weight: bold;
+  width: 50%;
+  font-size: 25px;
+  font-weight: bold;  
   justify-content: center;
 }
 
 .Header .header_left {
-  width: 25%; 
+  width: 25%;
   justify-content: flex-start;
 }
 
 .Header .header_right {
-  width: 25%; 
+  width: 25%;
   justify-content: flex-end;
 }

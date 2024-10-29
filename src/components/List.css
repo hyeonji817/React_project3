@@ -6,14 +6,14 @@
 
 .List > input {
   width: 100%; 
-  border: none;
-  border-bottom: 1px solid rgb(220, 220, 220);
-  padding: 15px 0px;
+  border: none; 
+  border-bottom: 1px solid rgb(220, 220, 220); 
+  padding: 15px 0px; 
 }
 
 .List > input:focus {
   outline: none; 
-  border-bottom: 1px solid rgb(27, 147, 255);
+  border-bottom: 1px solid rgb(37, 147, 255);
 }
 
 .List .todos_wrapper {

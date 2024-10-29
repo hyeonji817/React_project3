@@ -11,7 +11,7 @@
   height: 80px;
   display: flex;
   justify-content: center;
-  cursor: pointer;
+  cursor: pointer; 
   border-radius: 5px;
 }
 

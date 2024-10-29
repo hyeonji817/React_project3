@@ -8,14 +8,16 @@ import useDiary from "../hooks/useDiary";
 
 const Edit = () => {
   const params = useParams();
-  const nav = useNavigate();
+  const nav = useNavigate(); 
   const { onDelete, onUpdate } = useContext(DiaryDispatchContext);
 
   const curDiaryItem = useDiary(params.id);
 
   const onClickDelete = () => {
-    if (window.confirm("일기를 정말 삭제할까요? 다시 복구되지 않아요!")) {
-      // 일기 삭제 로직 
+    if (
+      window.confirm("일기를 정말 삭제할까요? 다시 복구되지 않아요!")
+    ) {
+      // 일기 삭제 로직
       onDelete(params.id);
       nav("/", { replace: true });
     }
@@ -43,8 +45,8 @@ const Edit = () => {
         rightChild={
           <Button 
             onClick={onClickDelete}
-            text={"삭제하기"}
-            type={"NEGATIVE"}
+            text={"삭제하기"} 
+            type={"NEGATIVE"} 
           />
         }
       />
